@@ -206,3 +206,84 @@ body {
         font-size: 0.9rem;
     }
 }
+
+/* ============================================
+   CARDS (index3)
+   ============================================ */
+.intro-text {
+    max-width: 720px;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 36px;
+    font-weight: 400;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(0, 51, 102, 0.2);
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: 0 6px 24px rgba(0, 51, 102, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 36px rgba(0, 51, 102, 0.22);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 14px;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.card-text {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #1a3a5c;
+    font-weight: 400;
+}
+
+.email-label {
+    font-size: 0.8rem;
+    color: #003366;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.email-link {
+    color: #1a5490;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
