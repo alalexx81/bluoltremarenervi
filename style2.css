@@ -70,8 +70,8 @@ body {
 .main {
     width: 80%;
     height: 70vh;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid #ffffff;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -85,24 +85,27 @@ body {
 }
 
 .main-content h2 {
-    color: #003366;
+    color: #ffffff;
     font-size: 1.8rem;
     margin-bottom: 15px;
     margin-top: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .main-content h3 {
-    color: #003366;
+    color: #ffffff;
     font-size: 1.2rem;
     margin-top: 25px;
     margin-bottom: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .main-content p {
-    color: #666;
+    color: #ffffff;
     line-height: 1.6;
     margin-bottom: 15px;
     text-align: justify;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .highlights-list {
@@ -112,10 +115,11 @@ body {
 }
 
 .highlights-list li {
-    color: #666;
+    color: #ffffff;
     padding: 8px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .highlights-list li:last-child {
@@ -128,8 +132,8 @@ body {
 .footer {
     width: 80%;
     height: 10vh;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,8 +144,9 @@ body {
 }
 
 .footer p {
-    color: #999;
+    color: #ffffff;
     font-size: 0.9rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
