@@ -3,250 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blu Oltremare - Una dimora storica unica a Nervi, Genova. Affittacamere con vista mare per coppie. Scopri attrazioni locali e servizi in Liguria.">
+    <meta name="description" content="Blu Oltremare - Una dimora storica unica a Nervi, Genova. Affittacamere con vista mare per coppie.">
     <meta name="keywords" content="Nervi, Genova, affittacamere, seaview, vacanze, Liguria, Blu Oltremare">
     <meta name="author" content="Blu Oltremare Nervi">
     <meta property="og:title" content="Blu Oltremare - Nervi | Historic Seaview Dimora">
     <meta property="og:description" content="Una dimora storica con vista mare nel cuore di Nervi. Affittacamere elegante per coppie dinamiche.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bluoltremarenervi.it">
-    <meta property="og:image" content="https://bluoltremarenervi.it/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#003366">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23003366'/><text x='50' y='65' font-size='60' fill='%2338bdf8' text-anchor='middle' font-weight='bold'>B</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- HEADER / WHITE TITLE SECTION -->
-    <header class="header">
-        <div class="header-content">
-            <div class="lang-switch">
-                <button class="lang-btn active" data-lang="it" aria-label="Seleziona italiano">🇮🇹 Italiano</button>
-                <button class="lang-btn" data-lang="en" aria-label="Select English">🇬🇧 English</button>
-            </div>
-            
-            <h1 class="page-title-it">Blu Oltremare</h1>
-            <h1 class="page-title-en">Blue Beyond the Sea</h1>
-            <p class="page-subtitle-it">Una dimora storica nel cuore di Nervi</p>
-            <p class="page-subtitle-en">A historic residence in the heart of Nervi</p>
-            
-            <div class="badge">In arrivo • Coming Soon</div>
+    <!-- LANGUAGE SWITCHER -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="it" aria-label="Seleziona italiano">🇮🇹 IT</button>
+        <button class="lang-btn" data-lang="en" aria-label="Select English">🇬🇧 EN</button>
+    </div>
+
+    <!-- TITLE SECTION -->
+    <section class="title-section">
+        <div class="title-container">
+            <h1 class="title-it">Blu Oltremare</h1>
+            <h1 class="title-en">Blue Beyond the Sea</h1>
+            <p class="subtitle-it">Una dimora storica nel cuore di Nervi</p>
+            <p class="subtitle-en">A historic residence in the heart of Nervi</p>
         </div>
-    </header>
+    </section>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-wrapper">
-        <div class="container">
+    <!-- DESCRIPTION SECTION -->
+    <section class="description-section">
+        <div class="description-container">
             
-            <!-- PROPERTY DESCRIPTION CARD -->
-            <section class="card property-card">
-                <article id="desc-it" class="lang-content active">
-                    <h2>Benvenuti a Blu Oltremare</h2>
-                    <p>Una dimora storica unica nel cuore di Nervi, dove il fascino del passato incontra l'infinito del Mar Ligure. Questo spazio esclusivo è pensato per coppie dinamiche e viaggiatori consapevoli che cercano un'esperienza autentica, immersi nella bellezza della costa ligure.</p>
+            <!-- Italian Description -->
+            <article id="desc-it" class="lang-content active">
+                <h2>Benvenuti a Blu Oltremare</h2>
+                <p>Una dimora storica unica nel cuore di Nervi, dove il fascino del passato incontra l'infinito del Mar Ligure. Questo spazio esclusivo è pensato per coppie dinamiche e viaggiatori consapevoli che cercano un'esperienza autentica, immersi nella bellezza della costa ligure.</p>
 
-                    <h3>Lo Spazio Interno: Legno e Colore</h3>
-                    <p>L'appartamento vi accoglierà con un'atmosfera intima e ricercata. Le imponenti travi a vista storiche scaldano l'ambiente e raccontano la secolarità della struttura. Gli interni si presentano in tonalità selezionate di grigio ardesia ligure e blu oltremare profondo, creando un'armonia visiva che rispecchia il paesaggio marino circostante.</p>
+                <h3>Lo Spazio Interno: Legno e Colore</h3>
+                <p>L'appartamento vi accoglierà con un'atmosfera intima e ricercata. Le imponenti travi a vista storiche scaldano l'ambiente e raccontano la secolarità della struttura. Gli interni si presentano in tonalità selezionate di grigio ardesia ligure e blu oltremare profondo, creando un'armonia visiva che rispecchia il paesaggio marino circostante.</p>
 
-                    <div class="alert-box">
-                        <strong>📍 Nota per gli ospiti (Scala d'epoca):</strong> Per raggiungere questo paradiso panoramico si incontra una caratteristica scala d'epoca, stretta e ripida, senza ascensore. Una piccola sfida che vi ripagherà con una vista indimenticabile.
-                    </div>
+                <h3>La Posizione Privilegiata</h3>
+                <p>A pochi passi dalla celebre Passeggiata Anita Garibaldi tesa tra scogliera e mare, dai Parchi Storici con i loro roseti e dai tipici locali del porticciolo. Nervi è il luogo ideale per scoprire l'essenza della Liguria.</p>
 
-                    <h3>La Posizione Privilegiata</h3>
-                    <p>A pochi passi dalla celebre Passeggiata Anita Garibaldi tesa tra scogliera e mare, dai Parchi Storici con i loro roseti e dai tipici locali del porticciolo. Nervi è il luogo ideale per scoprire l'essenza della Liguria.</p>
+                <h3>I Punti di Forza</h3>
+                <ul class="highlights-list">
+                    <li>🌊 Vista Mare Totale dalle finestre</li>
+                    <li>🪵 Fascino Storico con travi a vista</li>
+                    <li>🎨 Design Curato nei toni Oltremare</li>
+                    <li>👩‍❤️‍👨 Perfetto per Coppie dinamiche</li>
+                    <li>📶 Wi-Fi veloce & Aria Condizionata</li>
+                    <li>🛏️ Comfort Raffinato in ogni dettaglio</li>
+                </ul>
 
-                    <h3>I Nostri Punti di Forza</h3>
-                    <ul class="highlights-list">
-                        <li>🌊 <strong>Vista Mare Totale</strong> dalle finestre</li>
-                        <li>🪵 <strong>Fascino Storico</strong> con travi a vista</li>
-                        <li>🎨 <strong>Design Curato</strong> nei toni Oltremare</li>
-                        <li>👩‍❤️‍👨 <strong>Perfetto per Coppie</strong> dinamiche</li>
-                        <li>📶 <strong>Wi-Fi veloce</strong> & Aria Condizionata</li>
-                        <li>🛏️ <strong>Comfort Raffinato</strong> in ogni dettaglio</li>
-                    </ul>
-                </article>
-
-                <article id="desc-en" class="lang-content">
-                    <h2>Welcome to Blu Oltremare</h2>
-                    <p>A unique historic residence in the heart of Nervi, where the charm of the past meets the endless Ligurian Sea. Designed for dynamic couples and conscious travelers seeking an authentic experience, immersed in the beauty of the Ligurian coast.</p>
-
-                    <h3>Interior Space: Wood & Color</h3>
-                    <p>An intimate, refined atmosphere featuring majestic historic exposed wooden beams. The interior design contrasts traditional Ligurian slate gray with deep ultramarine blue tones, creating visual harmony that mirrors the surrounding seascape.</p>
-
-                    <div class="alert-box">
-                        <strong>📍 Guest Note (Historic Stairs):</strong> Accessing this panoramic haven requires walking up a narrow, steep historic staircase with no elevator. A small challenge rewarded with an unforgettable view.
-                    </div>
-
-                    <h3>Privileged Location</h3>
-                    <p>Steps away from the iconic Anita Garibaldi cliffside promenade, the Historic Rose Garden Parks, and charming local harbor venues. Nervi is the ideal place to discover the essence of Liguria.</p>
-
-                    <h3>Our Highlights</h3>
-                    <ul class="highlights-list">
-                        <li>🌊 <strong>Full Sea View</strong> from windows</li>
-                        <li>🪵 <strong>Historic Charm</strong> with original beams</li>
-                        <li>🎨 <strong>Refined Design</strong> in ultramarine palette</li>
-                        <li>👩‍❤️‍👨 <strong>Ideal for Couples</strong> & active getaways</li>
-                        <li>📶 <strong>High-Speed Wi-Fi</strong> & AC</li>
-                        <li>🛏️ <strong>Refined Comfort</strong> in every detail</li>
-                    </ul>
-                </article>
-            </section>
-
-            <!-- BOOKING SECTION -->
-            <section class="card booking-card">
-                <div id="booking-it" class="lang-content active">
-                    <h3>Prenota il Tuo Soggiorno</h3>
-                    <p>Scopri la magia di Nervi e prenota direttamente dai tuoi portali preferiti:</p>
-                    <div class="booking-buttons">
-                        <a href="https://www.airbnb.it" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Prenota su Airbnb">
-                            <span class="btn-icon">🏠</span> Airbnb
-                        </a>
-                        <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="Prenota su Booking.com">
-                            <span class="btn-icon">🔍</span> Booking.com
-                        </a>
-                        <a href="https://www.vrbo.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="Prenota su VRBO">
-                            <span class="btn-icon">🏡</span> VRBO
-                        </a>
-                    </div>
+                <div class="alert-box">
+                    <strong>📍 Nota per gli ospiti:</strong> Per raggiungere questo paradiso panoramico si incontra una scala d'epoca, stretta e ripida, senza ascensore. Una piccola sfida che vi ripagherà con una vista indimenticabile.
                 </div>
 
-                <div id="booking-en" class="lang-content">
-                    <h3>Book Your Stay</h3>
-                    <p>Discover the magic of Nervi and book directly on your preferred platform:</p>
-                    <div class="booking-buttons">
-                        <a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Book on Airbnb">
-                            <span class="btn-icon">🏠</span> Airbnb
-                        </a>
-                        <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="Book on Booking.com">
-                            <span class="btn-icon">🔍</span> Booking.com
-                        </a>
-                        <a href="https://www.vrbo.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="Book on VRBO">
-                            <span class="btn-icon">🏡</span> VRBO
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- DISCOVER NERVI SECTION -->
-            <section class="card discovery-card">
-                <div id="discover-it" class="lang-content active">
-                    <h3>Scopri Nervi e la Liguria</h3>
-                    <div class="tabs">
-                        <button class="tab-btn active" data-tab="attractions-it" aria-label="Visualizza attrazioni">🏛️ Attrazioni</button>
-                        <button class="tab-btn" data-tab="food-it" aria-label="Visualizza cibo e bevande">🍽️ Cibo & Vini</button>
-                        <button class="tab-btn" data-tab="services-it" aria-label="Visualizza servizi">🛒 Servizi</button>
-                    </div>
-
-                    <div id="attractions-it" class="tab-content active">
-                        <h4>Cosa Vedere Intorno a Nervi</h4>
-                        <ul class="discovery-list">
-                            <li><strong>Passeggiata Anita Garibaldi:</strong> Una camminata mozzafiato lungo la scogliera con viste panoramiche sul mare. Perfetta per coppie che amano la natura.</li>
-                            <li><strong>Parco Villetta Di Negro:</strong> Giardini storici con piante esotiche e vista sul porto antico di Genova. Ideale per passeggiate romantiche.</li>
-                            <li><strong>Porto di Nervi:</strong> Pittoresco porto con ristorantini tradizionali. Luogo ideale per cene al tramonto.</li>
-                            <li><strong>Genova Centro Storico:</strong> A soli 15 minuti con i mezzi pubblici. Scopri i Caruggi, la Cattedrale di San Lorenzo e il Porto Antico di Renzo Piano.</li>
-                            <li><strong>Acquario di Genova:</strong> Uno dei maggiori acquari europei, perfetto per una giornata immersiva nella biodiversità marina.</li>
-                            <li><strong>Spiagge di Boccadasse:</strong> A 20 minuti. Piccolo villaggio di pescatori con spiaggia raggiungibile, ideale per un tuffo pomeridiano.</li>
-                        </ul>
-                    </div>
-
-                    <div id="food-it" class="tab-content">
-                        <h4>Gusto Ligure: Piatti & Vini</h4>
-                        <ul class="discovery-list">
-                            <li><strong>Pesto Genovese:</strong> Basilico, aglio, pinoli e olio EVO. Lo troverai ovunque, sia nei ristoranti che nei delis locali.</li>
-                            <li><strong>Trofie al Pesto:</strong> Pasta fresca ligure condita con il rinomato pesto. Un must-try per ogni visita.</li>
-                            <li><strong>Focaccia di Recco:</strong> Sfoglia croccante ripiena di formaggio. Perfetta per uno spuntino veloce.</li>
-                            <li><strong>Acciughe Ripiene:</strong> Specialità di Nervi: acciughe locali farcite di pane e formaggio, poi passate in olio.</li>
-                            <li><strong>Vini Locali:</strong> Vermentino, Pigato e Rossese. I vini bianchi liguri accompagnano perfettamente il pesce fresco.</li>
-                            <li><strong>Ristoranti Consigliati:</strong> Nel porticciolo di Nervi troverai ristorantini autentici con tavoli affacciati sul mare.</li>
-                        </ul>
-                    </div>
-
-                    <div id="services-it" class="tab-content">
-                        <h4>Servizi e Comodità Locali</h4>
-                        <ul class="discovery-list">
-                            <li><strong>Supermercati:</strong> Coop e piccoli negozi a 5 minuti a piedi per acquisti quotidiani.</li>
-                            <li><strong>Farmacie:</strong> Farmacia Nervi a pochi passi. Servizio rapido e competente.</li>
-                            <li><strong>Trasporti Pubblici:</strong> Stazione ferroviaria di Nervi collegata a Genova Centro e alla Riviera di Levante. Autobus locali frequenti.</li>
-                            <li><strong>Noleggio Biciclette:</strong> Perfetto per esplorare la costa e i Parchi Storici in libertà.</li>
-                            <li><strong>Spiagge Attrezzate:</strong> Beach club con lettini e ombrelloni lungo la costa.</li>
-                            <li><strong>Escursioni Organizzate:</strong> Tour in barca, trekking costiero e visite guidate disponibili tramite agenzie locali.</li>
-                        </ul>
-                    </div>
+                <h3>Prenota il Tuo Soggiorno</h3>
+                <div class="booking-buttons">
+                    <a href="https://www.airbnb.it" target="_blank" rel="noopener noreferrer" class="btn btn-primary">🏠 Airbnb</a>
+                    <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">🔍 Booking.com</a>
+                    <a href="https://www.vrbo.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">🏡 VRBO</a>
                 </div>
 
-                <div id="discover-en" class="lang-content">
-                    <h3>Discover Nervi and Liguria</h3>
-                    <div class="tabs">
-                        <button class="tab-btn active" data-tab="attractions-en" aria-label="View attractions">🏛️ Attractions</button>
-                        <button class="tab-btn" data-tab="food-en" aria-label="View food and drinks">🍽️ Food & Wine</button>
-                        <button class="tab-btn" data-tab="services-en" aria-label="View services">🛒 Services</button>
-                    </div>
-
-                    <div id="attractions-en" class="tab-content active">
-                        <h4>What to See Around Nervi</h4>
-                        <ul class="discovery-list">
-                            <li><strong>Anita Garibaldi Promenade:</strong> A breathtaking clifftop walk with panoramic sea views. Perfect for nature-loving couples.</li>
-                            <li><strong>Villetta Di Negro Park:</strong> Historic gardens with exotic plants and views of Genoa's ancient harbor. Ideal for romantic strolls.</li>
-                            <li><strong>Nervi Harbor:</strong> Picturesque port with traditional restaurants. Perfect spot for sunset dinners.</li>
-                            <li><strong>Genoa City Center:</strong> Just 15 minutes by public transport. Explore the Caruggi alleys, St. Lawrence Cathedral, and Renzo Piano's Porto Antico.</li>
-                            <li><strong>Genoa Aquarium:</strong> One of Europe's largest aquariums, perfect for an immersive day discovering marine biodiversity.</li>
-                            <li><strong>Boccadasse Beaches:</strong> 20 minutes away. Charming fishing village with accessible beach, ideal for an afternoon dip.</li>
-                        </ul>
-                    </div>
-
-                    <div id="food-en" class="tab-content">
-                        <h4>Ligurian Flavors: Dishes & Wines</h4>
-                        <ul class="discovery-list">
-                            <li><strong>Pesto Genovese:</strong> Basil, garlic, pine nuts, and extra virgin olive oil. Find it everywhere from restaurants to local delis.</li>
-                            <li><strong>Trofie al Pesto:</strong> Fresh Ligurian pasta tossed with the renowned pesto. A must-try for every visit.</li>
-                            <li><strong>Focaccia di Recco:</strong> Crispy pastry filled with cheese. Perfect for a quick snack.</li>
-                            <li><strong>Stuffed Anchovies:</strong> Nervi specialty: local anchovies filled with breadcrumbs and cheese, then fried in oil.</li>
-                            <li><strong>Local Wines:</strong> Vermentino, Pigato, and Rossese. Ligurian white wines pair perfectly with fresh fish.</li>
-                            <li><strong>Recommended Restaurants:</strong> In Nervi's harbor, you'll find authentic trattorie with tables overlooking the sea.</li>
-                        </ul>
-                    </div>
-
-                    <div id="services-en" class="tab-content">
-                        <h4>Local Services & Amenities</h4>
-                        <ul class="discovery-list">
-                            <li><strong>Supermarkets:</strong> Coop and small shops within 5 minutes walking distance for daily shopping.</li>
-                            <li><strong>Pharmacies:</strong> Pharmacy Nervi just a few steps away. Quick and professional service.</li>
-                            <li><strong>Public Transport:</strong> Nervi railway station connected to Genoa Center and the Riviera di Levante. Frequent local buses.</li>
-                            <li><strong>Bike Rentals:</strong> Perfect for exploring the coast and Historic Parks at your own pace.</li>
-                            <li><strong>Equipped Beaches:</strong> Beach clubs with loungers and umbrellas along the coast.</li>
-                            <li><strong>Organized Excursions:</strong> Boat tours, coastal trekking, and guided visits available through local agencies.</li>
-                        </ul>
-                    </div>
+                <div class="contact-box">
+                    <p>Per informazioni:</p>
+                    <a href="mailto:blueoltremarenervi@gmail.com">blueoltremarenervi@gmail.com</a>
                 </div>
-            </section>
+            </article>
 
-            <!-- CONTACT SECTION -->
-            <section class="card contact-card">
-                <div id="contact-it" class="lang-content active">
-                    <h3>Contattaci</h3>
-                    <p>Hai domande o desideri ricevere informazioni aggiuntive? Scrivici pure!</p>
-                    <div class="email-box">
-                        <div class="email-label">Per informazioni / For inquiries</div>
-                        <a href="mailto:blueoltremarenervi@gmail.com" class="email-link">blueoltremarenervi@gmail.com</a>
-                    </div>
+            <!-- English Description -->
+            <article id="desc-en" class="lang-content">
+                <h2>Welcome to Blu Oltremare</h2>
+                <p>A unique historic residence in the heart of Nervi, where the charm of the past meets the endless Ligurian Sea. Designed for dynamic couples and conscious travelers seeking an authentic experience, immersed in the beauty of the Ligurian coast.</p>
+
+                <h3>Interior Space: Wood & Color</h3>
+                <p>An intimate, refined atmosphere featuring majestic historic exposed wooden beams. The interior design contrasts traditional Ligurian slate gray with deep ultramarine blue tones, creating visual harmony that mirrors the surrounding seascape.</p>
+
+                <h3>Privileged Location</h3>
+                <p>Steps away from the iconic Anita Garibaldi cliffside promenade, the Historic Rose Garden Parks, and charming local harbor venues. Nervi is the ideal place to discover the essence of Liguria.</p>
+
+                <h3>Our Highlights</h3>
+                <ul class="highlights-list">
+                    <li>🌊 Full Sea View from windows</li>
+                    <li>🪵 Historic Charm with original beams</li>
+                    <li>🎨 Refined Design in ultramarine palette</li>
+                    <li>👩‍❤️‍👨 Ideal for Couples & active getaways</li>
+                    <li>📶 High-Speed Wi-Fi & AC</li>
+                    <li>🛏️ Refined Comfort in every detail</li>
+                </ul>
+
+                <div class="alert-box">
+                    <strong>📍 Guest Note:</strong> Accessing this panoramic haven requires walking up a narrow, steep historic staircase with no elevator. A small challenge rewarded with an unforgettable view.
                 </div>
 
-                <div id="contact-en" class="lang-content">
-                    <h3>Contact Us</h3>
-                    <p>Do you have questions or would like more information? Feel free to reach out!</p>
-                    <div class="email-box">
-                        <div class="email-label">Per informazioni / For inquiries</div>
-                        <a href="mailto:blueoltremarenervi@gmail.com" class="email-link">blueoltremarenervi@gmail.com</a>
-                    </div>
+                <h3>Book Your Stay</h3>
+                <div class="booking-buttons">
+                    <a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">🏠 Airbnb</a>
+                    <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">🔍 Booking.com</a>
+                    <a href="https://www.vrbo.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">🏡 VRBO</a>
                 </div>
-            </section>
+
+                <div class="contact-box">
+                    <p>For inquiries:</p>
+                    <a href="mailto:blueoltremarenervi@gmail.com">blueoltremarenervi@gmail.com</a>
+                </div>
+            </article>
 
         </div>
-    </main>
+    </section>
 
     <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 Blu Oltremare Nervi — Tutti i diritti riservati / All rights reserved</p>
-        <p class="footer-meta">Genova, Liguria, Italia</p>
     </footer>
 
     <script src="script.js"></script>
