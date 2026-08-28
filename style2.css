@@ -70,7 +70,7 @@ body {
 .main {
     width: 80%;
     height: 70vh;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0.5);
     border: 2px solid #ffffff;
     display: flex;
     align-items: flex-start;
@@ -89,7 +89,6 @@ body {
     font-size: 1.8rem;
     margin-bottom: 15px;
     margin-top: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .main-content h3 {
@@ -97,7 +96,6 @@ body {
     font-size: 1.2rem;
     margin-top: 25px;
     margin-bottom: 12px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .main-content p {
@@ -105,7 +103,6 @@ body {
     line-height: 1.6;
     margin-bottom: 15px;
     text-align: justify;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .highlights-list {
@@ -117,9 +114,8 @@ body {
 .highlights-list li {
     color: #003366;
     padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 51, 102, 0.2);
     line-height: 1.5;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .highlights-list li:last-child {
@@ -132,7 +128,7 @@ body {
 .footer {
     width: 80%;
     height: 10vh;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0.5);
     border: 2px solid #ffffff;
     display: flex;
     align-items: center;
@@ -146,7 +142,6 @@ body {
 .footer p {
     color: #003366;
     font-size: 0.9rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* ============================================
