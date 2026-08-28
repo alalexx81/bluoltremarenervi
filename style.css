@@ -19,8 +19,8 @@ body {
 }
 
 .container {
-    max-width: 580px;
-    width: 100%;
+    max-width: 1024px;
+    width: 90%;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
@@ -30,7 +30,7 @@ body {
 }
 
 .logo {
-    max-width: 240px;
+    max-width: 1024px;
     width: 100%;
     height: auto;
     border-radius: 14px;
