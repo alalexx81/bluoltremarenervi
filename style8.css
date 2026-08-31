@@ -319,12 +319,11 @@ h1 {
         font-size: 1.4rem;
     }
 
-    .chapter-card,
-    .chapter-card.reverse-card {
+    .chapter-card {
         grid-template-columns: 1fr;
     }
 
-    /* Mobile: 2 colonne - testo + immagine piccola affianco */
+    /* Normal accordion: testo sx + immagine dx */
     .chapter-card.accordion-card {
         grid-template-columns: 1fr 100px;
         gap: 12px;
@@ -349,8 +348,37 @@ h1 {
         opacity: 0;
     }
 
-    /* Accordion expanded solo con .active */
     .chapter-card.accordion-card.active .chapter-visual-expanded {
+        max-height: 600px;
+        opacity: 1;
+    }
+
+    /* Reverse accordion: immagine sx + testo dx (anche su mobile) */
+    .chapter-card.accordion-card.reverse-accordion {
+        grid-template-columns: 100px 1fr;
+        gap: 12px;
+    }
+
+    .chapter-card.accordion-card.reverse-accordion .chapter-visual-small {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        width: 100px;
+        height: 100px;
+    }
+
+    .chapter-card.accordion-card.reverse-accordion .chapter-content {
+        grid-column: 2;
+        grid-row: 1 / 3;
+    }
+
+    .chapter-card.accordion-card.reverse-accordion .chapter-visual-expanded {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        max-height: 0;
+        opacity: 0;
+    }
+
+    .chapter-card.accordion-card.reverse-accordion.active .chapter-visual-expanded {
         max-height: 600px;
         opacity: 1;
     }
