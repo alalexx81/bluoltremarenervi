@@ -125,18 +125,6 @@ h1 {
     cursor: pointer;
 }
 
-.chapter-card.reverse-card {
-    grid-template-columns: 280px 1fr;
-}
-
-.chapter-card.reverse-card .chapter-content {
-    order: 2;
-}
-
-.chapter-card.reverse-card .chapter-visual {
-    order: 1;
-}
-
 .chapter-card.accordion-card {
     display: grid;
     grid-template-columns: 1fr 280px;
@@ -170,18 +158,27 @@ h1 {
     opacity: 1;
 }
 
+/* Reverse accordion - immagine a destra */
+.chapter-card.accordion-card.reverse-accordion {
+    grid-template-columns: 280px 1fr;
+}
+
+.chapter-card.accordion-card.reverse-accordion .chapter-content {
+    grid-column: 2;
+    grid-row: 1 / 3;
+}
+
+.chapter-card.accordion-card.reverse-accordion .chapter-visual-small {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.chapter-card.accordion-card.reverse-accordion .chapter-visual-expanded {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+
 .chapter-content {
-    opacity: 0;
-    transform: translateX(-8px);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.chapter-card.reverse-card .chapter-content {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.chapter-card.accordion-card .chapter-content {
     opacity: 1;
     transform: translateX(0);
 }
@@ -221,46 +218,11 @@ h1 {
     display: block;
 }
 
-.chapter-card.reverse-card .chapter-visual {
-    opacity: 0;
-    transform: translateX(-16px);
-}
-
 .chapter-visual img {
     width: 100%;
     height: 220px;
     object-fit: cover;
     display: block;
-}
-
-.chapter-card:hover .chapter-visual,
-.chapter-card:focus .chapter-visual,
-.chapter-card:focus-within .chapter-visual {
-    opacity: 0;
-    transform: translateX(16px);
-    pointer-events: none;
-}
-
-.chapter-card.reverse-card:hover .chapter-visual,
-.chapter-card.reverse-card:focus .chapter-visual,
-.chapter-card.reverse-card:focus-within .chapter-visual {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
-}
-
-.chapter-card:hover .chapter-content,
-.chapter-card:focus .chapter-content,
-.chapter-card:focus-within .chapter-content {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.chapter-card.reverse-card:hover .chapter-content,
-.chapter-card.reverse-card:focus .chapter-content,
-.chapter-card.reverse-card:focus-within .chapter-content {
-    opacity: 0;
-    transform: translateX(8px);
 }
 
 .chapter-card:focus-visible {
@@ -310,14 +272,9 @@ h1 {
     }
 
     .chapter-card,
-    .chapter-card.reverse-card,
-    .chapter-card.accordion-card {
+    .chapter-card.accordion-card,
+    .chapter-card.accordion-card.reverse-accordion {
         grid-template-columns: 1fr;
-    }
-
-    .chapter-card.reverse-card .chapter-content,
-    .chapter-card.reverse-card .chapter-visual {
-        order: initial;
     }
 
     .chapter-card.accordion-card .chapter-content {
@@ -325,41 +282,34 @@ h1 {
         grid-row: auto;
     }
 
-    .chapter-card.accordion-card .chapter-visual-small {
+    .chapter-card.accordion-card.reverse-accordion .chapter-content {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .chapter-card.accordion-card .chapter-visual-small,
+    .chapter-card.accordion-card.reverse-accordion .chapter-visual-small {
         grid-column: 1;
         grid-row: auto;
         width: 100%;
         height: 220px;
     }
 
-    .chapter-card.accordion-card .chapter-visual-expanded {
+    .chapter-card.accordion-card .chapter-visual-expanded,
+    .chapter-card.accordion-card.reverse-accordion .chapter-visual-expanded {
         grid-column: 1;
         grid-row: auto;
         max-height: none;
         opacity: 1;
     }
 
-    .chapter-content,
-    .chapter-card.reverse-card .chapter-content,
-    .chapter-card.accordion-card .chapter-content {
+    .chapter-content {
         opacity: 1;
         transform: none;
     }
 
-    .chapter-visual,
-    .chapter-card.reverse-card .chapter-visual {
+    .chapter-visual {
         opacity: 1;
         transform: none;
-    }
-
-    .chapter-card:hover .chapter-visual,
-    .chapter-card:focus .chapter-visual,
-    .chapter-card:focus-within .chapter-visual,
-    .chapter-card.reverse-card:hover .chapter-visual,
-    .chapter-card.reverse-card:focus .chapter-visual,
-    .chapter-card.reverse-card:focus-within .chapter-visual {
-        opacity: 1;
-        transform: none;
-        pointer-events: auto;
     }
 }
