@@ -167,7 +167,7 @@ h1 {
 /* Mobile: .active class expands accordion */
 @media (hover: none) and (max-width: 640px) {
     .chapter-card.accordion-card.active .chapter-visual-expanded {
-        max-height: 400px;
+        max-height: 600px;
         opacity: 1;
     }
 }
@@ -320,30 +320,36 @@ h1 {
     }
 
     .chapter-card,
-    .chapter-card.accordion-card {
+    .chapter-card.reverse-card {
         grid-template-columns: 1fr;
+    }
+
+    /* Mobile: 2 colonne - testo + immagine piccola affianco */
+    .chapter-card.accordion-card {
+        grid-template-columns: 1fr 100px;
+        gap: 12px;
     }
 
     .chapter-card.accordion-card .chapter-content {
         grid-column: 1;
-        grid-row: auto;
+        grid-row: 1 / 3;
     }
 
     .chapter-card.accordion-card .chapter-visual-small {
-        grid-column: 1;
-        grid-row: auto;
-        width: 100%;
-        height: 220px;
+        grid-column: 2;
+        grid-row: 1 / 3;
+        width: 100px;
+        height: 100px;
     }
 
-    /* Accordion expanded solo con .active */
     .chapter-card.accordion-card .chapter-visual-expanded {
-        grid-column: 1;
-        grid-row: auto;
+        grid-column: 1 / -1;
+        grid-row: 3;
         max-height: 0;
         opacity: 0;
     }
 
+    /* Accordion expanded solo con .active */
     .chapter-card.accordion-card.active .chapter-visual-expanded {
         max-height: 600px;
         opacity: 1;
