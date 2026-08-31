@@ -125,10 +125,26 @@ h1 {
     cursor: pointer;
 }
 
+.chapter-card.reverse-card {
+    grid-template-columns: 280px 1fr;
+}
+
+.chapter-card.reverse-card .chapter-content {
+    order: 2;
+}
+
+.chapter-card.reverse-card .chapter-visual {
+    order: 1;
+}
+
 .chapter-content {
     opacity: 0;
     transform: translateX(-8px);
     transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.chapter-card.reverse-card .chapter-content {
+    transform: translateX(8px);
 }
 
 .chapter-visual {
@@ -152,10 +168,22 @@ h1 {
     pointer-events: none;
 }
 
+.chapter-card.reverse-card:hover .chapter-visual,
+.chapter-card.reverse-card:focus .chapter-visual,
+.chapter-card.reverse-card:focus-within .chapter-visual {
+    transform: translateX(-16px);
+}
+
 .chapter-card:hover .chapter-content,
 .chapter-card:focus .chapter-content,
 .chapter-card:focus-within .chapter-content {
     opacity: 1;
+    transform: translateX(0);
+}
+
+.chapter-card.reverse-card:hover .chapter-content,
+.chapter-card.reverse-card:focus .chapter-content,
+.chapter-card.reverse-card:focus-within .chapter-content {
     transform: translateX(0);
 }
 
@@ -205,12 +233,22 @@ h1 {
         font-size: 1.4rem;
     }
 
-    .chapter-card {
+    .chapter-card,
+    .chapter-card.reverse-card {
         grid-template-columns: 1fr;
+    }
+
+    .chapter-card.reverse-card .chapter-content,
+    .chapter-card.reverse-card .chapter-visual {
+        order: initial;
     }
 
     .chapter-content {
         opacity: 1;
+        transform: none;
+    }
+
+    .chapter-card.reverse-card .chapter-content {
         transform: none;
     }
 
