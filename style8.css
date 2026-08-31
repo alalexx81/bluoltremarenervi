@@ -137,6 +137,38 @@ h1 {
     order: 1;
 }
 
+.chapter-card.accordion-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.chapter-card.accordion-card .chapter-content {
+    order: 1;
+    grid-column: 1;
+}
+
+.chapter-card.accordion-card .chapter-visual {
+    order: 2;
+    grid-column: 1;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.35s ease;
+}
+
+.chapter-card.accordion-card .chapter-visual img {
+    height: auto;
+}
+
+.chapter-card.accordion-card:hover .chapter-visual,
+.chapter-card.accordion-card:focus .chapter-visual,
+.chapter-card.accordion-card:focus-within .chapter-visual {
+    max-height: 400px;
+    opacity: 1;
+}
+
 .chapter-content {
     opacity: 0;
     transform: translateX(-8px);
@@ -245,7 +277,8 @@ h1 {
     }
 
     .chapter-card,
-    .chapter-card.reverse-card {
+    .chapter-card.reverse-card,
+    .chapter-card.accordion-card {
         grid-template-columns: 1fr;
     }
 
@@ -264,6 +297,11 @@ h1 {
     .chapter-card.reverse-card .chapter-visual {
         opacity: 1;
         transform: none;
+    }
+
+    .chapter-card.accordion-card .chapter-visual {
+        max-height: none;
+        opacity: 1;
     }
 
     .chapter-card:hover .chapter-visual,
