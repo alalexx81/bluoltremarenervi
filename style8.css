@@ -144,13 +144,21 @@ h1 {
 }
 
 .chapter-card.reverse-card .chapter-content {
-    transform: translateX(8px);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .chapter-visual {
     border-radius: 10px;
     overflow: hidden;
     transition: opacity 0.35s ease, transform 0.35s ease;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.chapter-card.reverse-card .chapter-visual {
+    opacity: 0;
+    transform: translateX(-16px);
 }
 
 .chapter-visual img {
@@ -171,7 +179,9 @@ h1 {
 .chapter-card.reverse-card:hover .chapter-visual,
 .chapter-card.reverse-card:focus .chapter-visual,
 .chapter-card.reverse-card:focus-within .chapter-visual {
-    transform: translateX(-16px);
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
 }
 
 .chapter-card:hover .chapter-content,
@@ -184,7 +194,8 @@ h1 {
 .chapter-card.reverse-card:hover .chapter-content,
 .chapter-card.reverse-card:focus .chapter-content,
 .chapter-card.reverse-card:focus-within .chapter-content {
-    transform: translateX(0);
+    opacity: 0;
+    transform: translateX(8px);
 }
 
 .chapter-card:focus-visible {
@@ -243,18 +254,24 @@ h1 {
         order: initial;
     }
 
-    .chapter-content {
+    .chapter-content,
+    .chapter-card.reverse-card .chapter-content {
         opacity: 1;
         transform: none;
     }
 
-    .chapter-card.reverse-card .chapter-content {
+    .chapter-visual,
+    .chapter-card.reverse-card .chapter-visual {
+        opacity: 1;
         transform: none;
     }
 
     .chapter-card:hover .chapter-visual,
     .chapter-card:focus .chapter-visual,
-    .chapter-card:focus-within .chapter-visual {
+    .chapter-card:focus-within .chapter-visual,
+    .chapter-card.reverse-card:hover .chapter-visual,
+    .chapter-card.reverse-card:focus .chapter-visual,
+    .chapter-card.reverse-card:focus-within .chapter-visual {
         opacity: 1;
         transform: none;
         pointer-events: auto;
