@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const slideCount = slides.length;
 
     function updateSliderPosition() {
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      const slideWidth = container.querySelector(".slider-wrapper")?.clientWidth || 0;
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
     function goPrev(e) {
@@ -45,10 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!isMobile()) return;
 
       card.classList.toggle("active");
-
-      requestAnimationFrame(() => {
-        updateSliderPosition();
-      });
+      requestAnimationFrame(() => updateSliderPosition());
     });
 
     card.addEventListener("keydown", (e) => {
@@ -56,12 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         card.classList.toggle("active");
-        requestAnimationFrame(updateSliderPosition);
+        requestAnimationFrame(() => updateSliderPosition());
       }
     });
 
-    window.addEventListener("resize", updateSliderPosition);
-    window.addEventListener("orientationchange", updateSliderPosition);
+    window.addEventListener("resize", () => requestAnimationFrame(updateSliderPosition));
+    window.addEventListener("orientationchange", () => requestAnimationFrame(updateSliderPosition));
 
     updateSliderPosition();
   });
