@@ -148,10 +148,9 @@ h1 {
 .chapter-card.accordion-card .chapter-visual-expanded {
     grid-column: 1 / -1;
     grid-row: 2;
-    max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.35s ease, opacity 0.35s ease;
+    transition: opacity 0.35s ease;
 }
 
 /* Reverse accordion - immagine a sinistra su desktop */
@@ -179,7 +178,6 @@ h1 {
     .chapter-card.accordion-card:hover .chapter-visual-expanded,
     .chapter-card.accordion-card:focus .chapter-visual-expanded,
     .chapter-card.accordion-card:focus-within .chapter-visual-expanded {
-        max-height: 400px;
         opacity: 1;
     }
 }
@@ -187,7 +185,6 @@ h1 {
 /* Mobile: .active class expands accordion */
 @media (hover: none) and (max-width: 640px) {
     .chapter-card.accordion-card.active .chapter-visual-expanded {
-        max-height: 600px;
         opacity: 1;
     }
 }
@@ -227,9 +224,8 @@ h1 {
 
 .chapter-visual-expanded img {
     width: 100%;
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     display: block;
 }
 
@@ -366,12 +362,10 @@ h1 {
     .chapter-card.accordion-card .chapter-visual-expanded {
         grid-column: 1 / -1;
         grid-row: 3;
-        max-height: 0;
         opacity: 0;
     }
 
     .chapter-card.accordion-card.active .chapter-visual-expanded {
-        max-height: 600px;
         opacity: 1;
     }
 
@@ -396,12 +390,10 @@ h1 {
     .chapter-card.accordion-card.reverse-accordion .chapter-visual-expanded {
         grid-column: 1 / -1;
         grid-row: 3;
-        max-height: 0;
         opacity: 0;
     }
 
     .chapter-card.accordion-card.reverse-accordion.active .chapter-visual-expanded {
-        max-height: 600px;
         opacity: 1;
     }
 
