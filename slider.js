@@ -1,54 +1,68 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // ===== SLIDER LOGIC =====
-    const sliderContainers = document.querySelectorAll('.slider-container');
+document.addEventListener("DOMContentLoaded", () => {
+  const isMobile = () =>
+    window.matchMedia("(hover: none) and (max-width: 640px)").matches;
 
-    sliderContainers.forEach(function(container) {
-        const track = container.querySelector('.slider-track');
-        const slides = container.querySelectorAll('.slider-slide');
-        const prevButton = container.querySelector('.slider-prev');
-        const nextButton = container.querySelector('.slider-next');
+  const cards = document.querySelectorAll(".chapter-card.accordion-card");
 
-        let currentIndex = 0;
-        const slideCount = slides.length;
+  cards.forEach((card) => {
+    const container = card.querySelector(".slider-container");
+    if (!container) return;
 
-        function updateSliderPosition() {
-            const offset = -currentIndex * 100;
-            track.style.transform = `translateX(${offset}%)`;
-        }
+    const track = container.querySelector(".slider-track");
+    const slides = container.querySelectorAll(".slider-slide");
+    const prevBtn = container.querySelector(".slider-prev");
+    const nextBtn = container.querySelector(".slider-next");
 
-        prevButton.addEventListener('click', function(e) {
-            e.stopPropagation();
-            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-            updateSliderPosition();
-        });
+    let currentIndex = 0;
+    const slideCount = slides.length;
 
-        nextButton.addEventListener('click', function(e) {
-            e.stopPropagation();
-            currentIndex = (currentIndex + 1) % slideCount;
-            updateSliderPosition();
-        });
+    function updateSliderPosition() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
 
-        container.addEventListener('keydown', function(event) {
-            if (event.key === 'ArrowLeft') {
-                prevButton.click();
-            } else if (event.key === 'ArrowRight') {
-                nextButton.click();
-            }
-        });
+    function goPrev(e) {
+      if (e) e.stopPropagation();
+      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+      updateSliderPosition();
+    }
+
+    function goNext(e) {
+      if (e) e.stopPropagation();
+      currentIndex = (currentIndex + 1) % slideCount;
+      updateSliderPosition();
+    }
+
+    prevBtn?.addEventListener("click", goPrev);
+    nextBtn?.addEventListener("click", goNext);
+
+    container.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") goPrev(event);
+      if (event.key === "ArrowRight") goNext(event);
     });
 
-    // ===== ACCORDION TOGGLE LOGIC (Mobile) =====
-    const accordionCards = document.querySelectorAll('.chapter-card.accordion-card');
+    card.addEventListener("click", (e) => {
+      if (e.target.closest(".slider-arrow")) return;
+      if (!isMobile()) return;
 
-    accordionCards.forEach(function(card) {
-        card.addEventListener('click', function(e) {
-            // Non attivare se clicca su bottone slider
-            if (e.target.closest('.slider-arrow')) {
-                return;
-            }
+      card.classList.toggle("active");
 
-            // Toggle la classe active
-            card.classList.toggle('active');
-        });
+      requestAnimationFrame(() => {
+        updateSliderPosition();
+      });
     });
+
+    card.addEventListener("keydown", (e) => {
+      if (!isMobile()) return;
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        card.classList.toggle("active");
+        requestAnimationFrame(updateSliderPosition);
+      }
+    });
+
+    window.addEventListener("resize", updateSliderPosition);
+    window.addEventListener("orientationchange", updateSliderPosition);
+
+    updateSliderPosition();
+  });
 });
