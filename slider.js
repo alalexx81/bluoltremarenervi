@@ -17,8 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const slideCount = slides.length;
 
     function updateSliderPosition() {
-      const slideWidth = container.querySelector(".slider-wrapper")?.clientWidth || 0;
+      const wrapper = container.querySelector(".slider-wrapper");
+      const slideWidth = wrapper?.clientWidth || 0;
       track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    function scrollCardToCenter() {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.top + window.scrollY + rect.height / 2;
+      const targetY = cardCenter - window.innerHeight / 2;
+
+      window.scrollTo({
+        top: Math.max(0, targetY),
+        behavior: "smooth",
+      });
     }
 
     function goPrev(e) {
@@ -46,7 +58,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!isMobile()) return;
 
       card.classList.toggle("active");
-      requestAnimationFrame(() => updateSliderPosition());
+
+      if (card.classList.contains("active")) {
+        requestAnimationFrame(() => {
+          scrollCardToCenter();
+          updateSliderPosition();
+        });
+      } else {
+        requestAnimationFrame(updateSliderPosition);
+      }
     });
 
     card.addEventListener("keydown", (e) => {
@@ -54,12 +74,24 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         card.classList.toggle("active");
-        requestAnimationFrame(() => updateSliderPosition());
+
+        if (card.classList.contains("active")) {
+          requestAnimationFrame(() => {
+            scrollCardToCenter();
+            updateSliderPosition();
+          });
+        } else {
+          requestAnimationFrame(updateSliderPosition);
+        }
       }
     });
 
-    window.addEventListener("resize", () => requestAnimationFrame(updateSliderPosition));
-    window.addEventListener("orientationchange", () => requestAnimationFrame(updateSliderPosition));
+    window.addEventListener("resize", () =>
+      requestAnimationFrame(updateSliderPosition)
+    );
+    window.addEventListener("orientationchange", () =>
+      requestAnimationFrame(updateSliderPosition)
+    );
 
     updateSliderPosition();
   });
