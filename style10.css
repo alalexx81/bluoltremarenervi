@@ -102,6 +102,21 @@ h1 {
     border-left-color: #9d6e3a;
 }
 
+.chapter-card.note-card {
+    grid-template-columns: 280px 1fr;
+    cursor: default;
+}
+
+.chapter-card.note-card .chapter-visual-small {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.chapter-card.note-card .chapter-content {
+    grid-column: 2;
+    grid-row: 1;
+}
+
 .chapter-label {
     text-transform: uppercase;
     letter-spacing: 0.12rem;
@@ -394,6 +409,16 @@ h1 {
 
     .chapter-card.accordion-card.reverse-accordion.active .chapter-visual-expanded {
         display: block;
+    }
+
+    .chapter-card.note-card {
+        grid-template-columns: 100px 1fr;
+        gap: 12px;
+    }
+
+    .chapter-card.note-card .chapter-visual-small {
+        width: 100px;
+        height: 100px;
     }
 
     .chapter-content {
