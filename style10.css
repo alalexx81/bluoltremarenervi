@@ -103,8 +103,16 @@ body {
 .logo {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
+}
+
+.logo-curtain-left .logo {
+    object-position: left center;
+}
+
+.logo-curtain-right .logo {
+    object-position: right center;
 }
 
 /* Stile del background sotto le tende */
