@@ -38,10 +38,18 @@
 
     // Animazione tenda del logo
     const logoContainer = document.querySelector('.logo-container');
+    const video = document.querySelector('.background-video');
+    
     if (logoContainer) {
       // Apertura automatica al caricamento dopo 1 secondo
       setTimeout(() => {
         logoContainer.classList.add('opened');
+        // Su iOS, il play deve avvenire dopo un'interazione utente o dopo che le tende si aprono
+        if (video) {
+          video.play().catch(function(error) {
+            console.log("Autoplay non permesso:", error);
+          });
+        }
       }, 1000);
 
       // Click per toggle
@@ -56,7 +64,7 @@
         <div class="shade"></div>
         <div class="cover-inner">
             <div class="logo-container">
-                <video class="background-video" autoplay muted loop>
+                <video class="background-video" autoplay muted loop playsinline>
                     <source src="mare.mp4" type="video/mp4">
                     Il tuo browser non supporta il video HTML5
                 </video>
