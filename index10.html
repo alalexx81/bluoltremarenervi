@@ -39,6 +39,12 @@
     // Animazione tenda del logo
     const logoContainer = document.querySelector('.logo-container');
     if (logoContainer) {
+      // Apertura automatica al caricamento dopo 1 secondo
+      setTimeout(() => {
+        logoContainer.classList.add('opened');
+      }, 1000);
+
+      // Click per toggle
       logoContainer.addEventListener('click', function () {
         logoContainer.classList.toggle('opened');
       });
