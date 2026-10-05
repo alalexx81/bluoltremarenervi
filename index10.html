@@ -35,13 +35,32 @@
         }
       });
     });
+
+    // Animazione tenda del logo
+    const logoContainer = document.querySelector('.logo-container');
+    if (logoContainer) {
+      logoContainer.addEventListener('click', function () {
+        logoContainer.classList.toggle('opened');
+      });
+    }
   });
 </script>
 <body>
     <header class="cover">
         <div class="shade"></div>
         <div class="cover-inner">
-            <img src="logo1.png" alt="Blu Oltremare - Nervi" class="logo">
+            <div class="logo-container">
+                <video class="background-video" autoplay muted loop>
+                    <source src="mare.mp4" type="video/mp4">
+                    Il tuo browser non supporta il video HTML5
+                </video>
+                <div class="logo-curtain logo-curtain-left">
+                    <img src="logo1.png" alt="Blu Oltremare - Nervi" class="logo">
+                </div>
+                <div class="logo-curtain logo-curtain-right">
+                    <img src="logo1.png" alt="Blu Oltremare - Nervi" class="logo">
+                </div>
+            </div>
             <h1>Una storia di mare, legno antico e luce ligure</h1>
             <a href="mailto:blueoltremarenervi@gmail.com" class="scroll-link">Info e Prenotazioni</a>
         </div>
