@@ -68,58 +68,6 @@
     <title>Blu Oltremare - Appartamento Lusso Affitto Nervi, Genova | Vista Mare</title>
     <link rel="stylesheet" href="style10.css">
 </head>
-<script src="slider.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const cards = document.querySelectorAll('.accordion-card');
-
-    cards.forEach((card) => {
-      card.addEventListener('click', function (event) {
-        if (event.target.closest('.slider-arrow')) return;
-
-        const wasActive = card.classList.contains('active');
-
-        cards.forEach((c) => c.classList.remove('active'));
-
-        if (!wasActive) {
-          card.classList.add('active');
-          setTimeout(() => {
-            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 120);
-        }
-      });
-
-      card.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          card.click();
-        }
-      });
-    });
-
-    // Animazione tenda del logo
-    const logoContainer = document.querySelector('.logo-container');
-    const video = document.querySelector('.background-video');
-    
-    if (logoContainer) {
-      // Apertura automatica al caricamento dopo 1 secondo
-      setTimeout(() => {
-        logoContainer.classList.add('opened');
-        // Su iOS, il play deve avvenire dopo un'interazione utente o dopo che le tende si aprono
-        if (video) {
-          video.play().catch(function(error) {
-            console.log("Autoplay non permesso:", error);
-          });
-        }
-      }, 1000);
-
-      // Click per toggle
-      logoContainer.addEventListener('click', function () {
-        logoContainer.classList.toggle('opened');
-      });
-    }
-  });
-</script>
 <body>
     <header class="cover">
         <div class="shade"></div>
@@ -248,5 +196,64 @@
     </footer>
 
     <script src="slider.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.accordion-card');
+
+        const toggleCard = (card) => {
+          const wasActive = card.classList.contains('active');
+          cards.forEach((c) => c.classList.remove('active'));
+
+          if (!wasActive) {
+            card.classList.add('active');
+            setTimeout(() => {
+              card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 120);
+          }
+        };
+
+        cards.forEach((card) => {
+          card.addEventListener('click', function (event) {
+            if (event.target.closest('.slider-arrow')) return;
+            toggleCard(card);
+          });
+
+          card.addEventListener('touchend', function (event) {
+            if (event.target.closest('.slider-arrow')) return;
+            event.preventDefault();
+            toggleCard(card);
+          }, { passive: false });
+
+          card.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              toggleCard(card);
+            }
+          });
+        });
+
+        // Animazione tenda del logo
+        const logoContainer = document.querySelector('.logo-container');
+        const video = document.querySelector('.background-video');
+
+        if (logoContainer) {
+          // Apertura automatica al caricamento dopo 1 secondo
+          setTimeout(() => {
+            logoContainer.classList.add('opened');
+            // Su iOS, il play deve avvenire dopo un'interazione utente o dopo che le tende si aprono
+            if (video) {
+              video.play().catch(function(error) {
+                console.log("Autoplay non permesso:", error);
+              });
+            }
+          }, 1000);
+
+          // Click per toggle
+          logoContainer.addEventListener('click', function () {
+            logoContainer.classList.toggle('opened');
+          });
+        }
+      });
+    </script>
 </body>
 </html>
