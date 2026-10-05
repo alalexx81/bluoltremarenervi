@@ -259,6 +259,12 @@ h1 {
     display: none;
 }
 
+/* Show expanded accordion on all touch/tablet widths when JS adds .active */
+.chapter-card.accordion-card.active .chapter-visual-expanded,
+.chapter-card.accordion-card.reverse-accordion.active .chapter-visual-expanded {
+    display: block;
+}
+
 @media (hover: hover) {
     .chapter-card.accordion-card:hover .chapter-visual-expanded,
     .chapter-card.accordion-card:focus .chapter-visual-expanded,
