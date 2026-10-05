@@ -45,9 +45,76 @@ body {
     color: #ffffff;
 }
 
+/* Logo Container - Tenda animata */
+.logo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 16px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.logo-curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.logo-curtain-left {
+    left: 0;
+    transform: translateX(0);
+}
+
+.logo-curtain-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.logo-container.opened .logo-curtain-left {
+    transform: translateX(-100%);
+}
+
+.logo-container.opened .logo-curtain-right {
+    transform: translateX(100%);
+}
+
 .logo {
-    width: min(520px, 95%);
-    margin-bottom: 16px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Stile del background sotto le tende */
+.logo-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.3), rgba(0, 51, 102, 0.3));
+    z-index: 0;
 }
 
 .tag {
@@ -430,5 +497,10 @@ h1 {
         width: 32px;
         height: 32px;
         font-size: 1rem;
+    }
+
+    .logo-container {
+        width: 200px;
+        height: 200px;
     }
 }
