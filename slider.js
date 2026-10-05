@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const isTouchDevice = () =>
-    window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-
   const cards = document.querySelectorAll(".chapter-card.accordion-card");
 
   cards.forEach((card) => {
@@ -20,17 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const wrapper = container.querySelector(".slider-wrapper");
       const slideWidth = wrapper?.clientWidth || 0;
       track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-    }
-
-    function scrollCardToCenter() {
-      const rect = card.getBoundingClientRect();
-      const cardCenter = rect.top + window.scrollY + rect.height / 2;
-      const targetY = cardCenter - window.innerHeight / 2;
-
-      window.scrollTo({
-        top: Math.max(0, targetY),
-        behavior: "smooth",
-      });
     }
 
     function goPrev(e) {
@@ -53,30 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (event.key === "ArrowRight") goNext(event);
     });
 
-    card.addEventListener("click", (e) => {
-      if (e.target.closest(".slider-arrow")) return;
-      if (!isTouchDevice()) return;
-      e.preventDefault();
-      e.stopPropagation();
-    });
-
-    card.addEventListener(
-      "touchend",
-      (e) => {
-        if (e.target.closest(".slider-arrow")) return;
-        if (!isTouchDevice()) return;
-        e.preventDefault();
-        e.stopPropagation();
-      },
-      { passive: false }
-    );
-
-    window.addEventListener("resize", () =>
-      requestAnimationFrame(updateSliderPosition)
-    );
-    window.addEventListener("orientationchange", () =>
-      requestAnimationFrame(updateSliderPosition)
-    );
+    window.addEventListener("resize", () => requestAnimationFrame(updateSliderPosition));
+    window.addEventListener("orientationchange", () => requestAnimationFrame(updateSliderPosition));
 
     updateSliderPosition();
   });

@@ -265,10 +265,8 @@ h1 {
     display: block;
 }
 
-@media (hover: hover) {
-    .chapter-card.accordion-card:hover .chapter-visual-expanded,
-    .chapter-card.accordion-card:focus .chapter-visual-expanded,
-    .chapter-card.accordion-card:focus-within .chapter-visual-expanded {
+@media (hover: hover) and (pointer: fine) {
+    .chapter-card.accordion-card:hover .chapter-visual-expanded {
         display: block;
     }
 }
