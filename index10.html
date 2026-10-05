@@ -199,6 +199,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const cards = document.querySelectorAll('.accordion-card');
+        let lastTouchAt = 0;
 
         const toggleCard = (card) => {
           const wasActive = card.classList.contains('active');
@@ -213,16 +214,26 @@
         };
 
         cards.forEach((card) => {
-          card.addEventListener('click', function (event) {
+          card.addEventListener('pointerup', function (event) {
+            if (event.pointerType !== 'touch' && event.pointerType !== 'pen') return;
             if (event.target.closest('.slider-arrow')) return;
+            event.preventDefault();
+            lastTouchAt = Date.now();
             toggleCard(card);
-          });
+          }, { passive: false });
 
           card.addEventListener('touchend', function (event) {
             if (event.target.closest('.slider-arrow')) return;
             event.preventDefault();
+            lastTouchAt = Date.now();
             toggleCard(card);
           }, { passive: false });
+
+          card.addEventListener('click', function (event) {
+            if (event.target.closest('.slider-arrow')) return;
+            if (Date.now() - lastTouchAt < 700) return;
+            toggleCard(card);
+          });
 
           card.addEventListener('keydown', function (event) {
             if (event.key === 'Enter' || event.key === ' ') {

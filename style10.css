@@ -215,6 +215,8 @@ h1 {
     grid-template-columns: 1fr 280px;
     gap: 20px;
     align-items: flex-start;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .chapter-card.accordion-card .chapter-content {

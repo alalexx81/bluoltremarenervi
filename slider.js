@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const isMobile = () =>
-    window.matchMedia("(hover: none) and (max-width: 640px)").matches;
+  const isTouchDevice = () =>
+    window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
   const cards = document.querySelectorAll(".chapter-card.accordion-card");
 
@@ -55,36 +55,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     card.addEventListener("click", (e) => {
       if (e.target.closest(".slider-arrow")) return;
-      if (!isMobile()) return;
-
-      card.classList.toggle("active");
-
-      if (card.classList.contains("active")) {
-        requestAnimationFrame(() => {
-          scrollCardToCenter();
-          updateSliderPosition();
-        });
-      } else {
-        requestAnimationFrame(updateSliderPosition);
-      }
+      if (!isTouchDevice()) return;
+      e.preventDefault();
+      e.stopPropagation();
     });
 
-    card.addEventListener("keydown", (e) => {
-      if (!isMobile()) return;
-      if (e.key === "Enter" || e.key === " ") {
+    card.addEventListener(
+      "touchend",
+      (e) => {
+        if (e.target.closest(".slider-arrow")) return;
+        if (!isTouchDevice()) return;
         e.preventDefault();
-        card.classList.toggle("active");
-
-        if (card.classList.contains("active")) {
-          requestAnimationFrame(() => {
-            scrollCardToCenter();
-            updateSliderPosition();
-          });
-        } else {
-          requestAnimationFrame(updateSliderPosition);
-        }
-      }
-    });
+        e.stopPropagation();
+      },
+      { passive: false }
+    );
 
     window.addEventListener("resize", () =>
       requestAnimationFrame(updateSliderPosition)
