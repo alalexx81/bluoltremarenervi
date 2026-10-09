@@ -45,6 +45,27 @@ body {
     color: #ffffff;
 }
 
+.language-picker {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 0.85rem;
+}
+
+.language-picker select {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 999px;
+    padding: 7px 12px;
+    color: var(--ink);
+    background: #ffffff;
+    font: inherit;
+}
+
 /* Logo Container - Tenda animata */
 .logo-container {
     position: relative;
@@ -518,5 +539,10 @@ h1 {
     .logo-container {
         width: min(400px, 95%);
         height: auto;
+    }
+
+    .language-picker {
+        top: 12px;
+        right: 12px;
     }
 }
